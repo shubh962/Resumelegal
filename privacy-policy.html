@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — Pro Resume Maker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --ink:    #1a1a2e;
+    --muted:  #5a5a7a;
+    --accent: #4a00e0;
+    --bg:     #fafaf8;
+    --card:   #ffffff;
+    --border: #e8e8f0;
+    --tag-bg: #f0ecff;
+    --tag-fg: #4a00e0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 60%, #4a00e0 100%);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(142,45,226,0.3) 0%, transparent 60%);
+  }
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .app-badge::before { content: '📄'; font-size: 15px; }
+  header h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  header p {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    position: relative;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── INTRO BOX ── */
+  .intro-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    background: #fdfcff;
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--tag-bg);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .section-body {
+    padding: 24px 28px;
+    font-size: 15px;
+    color: #3a3a5c;
+    line-height: 1.85;
+  }
+  .section-body p { margin-bottom: 14px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body ul {
+    padding-left: 20px;
+    margin: 12px 0;
+  }
+  .section-body ul li {
+    margin-bottom: 8px;
+    color: #3a3a5c;
+  }
+
+  /* ── TAG ── */
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 6px;
+  }
+
+  /* ── HIGHLIGHT ── */
+  .highlight {
+    background: #f0ecff;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .highlight::before { content: '✓  '; }
+
+  /* ── CONTACT BOX ── */
+  .contact-box {
+    background: linear-gradient(135deg, #1a1a2e, #2d1b69);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-align: center;
+    color: #fff;
+    margin-top: 48px;
+  }
+  .contact-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .contact-box p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 18px; }
+  .contact-box a {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .contact-box a:hover { opacity: 0.85; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--accent); text-decoration: none; margin: 0 8px; }
+
+  @media (max-width: 600px) {
+    .section-body { padding: 18px 18px; }
+    .section-header { padding: 16px 18px; }
+    header { padding: 40px 16px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="app-badge">Pro Resume Maker</div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: June 2026 &nbsp;·&nbsp; Effective immediately</p>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    Your privacy genuinely matters to us. This policy explains in plain language what information Pro Resume Maker collects, what it doesn't collect, and how everything works. We've written this to be readable — not just legally defensible.
+  </div>
+
+  <!-- 1. WHO WE ARE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">👤</div>
+      <h2>1. Who We Are</h2>
+    </div>
+    <div class="section-body">
+      <p>Pro Resume Maker is an Android application developed and maintained by Shubham Gautam, an independent developer based in India. The app helps users create professional, ATS-optimized resumes and export them as PDF files — completely free of charge.</p>
+      <p>If you have any questions about this policy or anything else related to the app, you can reach us directly at <strong>support@yourapp.com</strong>. We're a small team and we actually read and respond to every email.</p>
+    </div>
+  </div>
+
+  <!-- 2. WHAT WE COLLECT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>2. What Information We Collect</h2>
+    </div>
+    <div class="section-body">
+      <p><strong>Resume data you enter (stored only on your device):</strong></p>
+      <ul>
+        <li>Your name, job title, email address, phone number, and location</li>
+        <li>Work experience, education history, and skills</li>
+        <li>Projects, languages, interests, and any other sections you choose to fill in</li>
+        <li>Profile photo (stored locally on your device)</li>
+      </ul>
+      <div class="highlight">All resume data stays on your device. We do not upload, sync, or store any of your personal resume information on our servers.</div>
+      <p><strong>Automatically collected information:</strong></p>
+      <ul>
+        <li>Basic app usage data through Google AdMob (for serving ads)</li>
+        <li>Crash reports and error logs through standard Android mechanisms</li>
+        <li>Device type, OS version, and general location (country-level only) — collected by AdMob for ad relevance</li>
+      </ul>
+      <p>We do not collect your email address, create user accounts, or require you to log in to use the app.</p>
+    </div>
+  </div>
+
+  <!-- 3. WHAT WE DON'T COLLECT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🚫</div>
+      <h2>3. What We Do Not Collect</h2>
+    </div>
+    <div class="section-body">
+      <p>We want to be explicit about this because we know it matters:</p>
+      <ul>
+        <li>We do <strong>not</strong> read or access the resume content you type into the app</li>
+        <li>We do <strong>not</strong> upload your resume data to any server</li>
+        <li>We do <strong>not</strong> sell your information to anyone, ever</li>
+        <li>We do <strong>not</strong> track your location beyond what AdMob uses for ad targeting (country level)</li>
+        <li>We do <strong>not</strong> require an account or email registration</li>
+        <li>We do <strong>not</strong> share your personal data with third parties for marketing purposes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. HOW WE USE INFORMATION -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <h2>4. How We Use Information</h2>
+    </div>
+    <div class="section-body">
+      <p>The only data we actually use is:</p>
+      <ul>
+        <li><strong>Resume data</strong> — used only to generate your PDF resume, entirely on your device. Once the PDF is created, data stays on your phone.</li>
+        <li><strong>AdMob data</strong> — used by Google to display relevant ads within the app. This is how we keep the app free. You can review Google's privacy practices at <a href="https://policies.google.com/privacy" style="color:#4a00e0;">policies.google.com/privacy</a>.</li>
+        <li><strong>Crash data</strong> — used to fix bugs and improve the app's stability.</li>
+      </ul>
+      <p>We don't use any of this to build profiles about you, target you with marketing, or share with data brokers.</p>
+    </div>
+  </div>
+
+  <!-- 5. THIRD PARTY SERVICES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. Third-Party Services</h2>
+    </div>
+    <div class="section-body">
+      <p>Pro Resume Maker uses the following third-party services that have their own privacy practices:</p>
+      <ul>
+        <li><strong>Google AdMob</strong> — displays ads to keep the app free. AdMob may collect device identifiers and usage data for ad personalization. <a href="https://policies.google.com/privacy" style="color:#4a00e0;">Google Privacy Policy</a></li>
+        <li><strong>Google Play Services</strong> — standard Android services for app distribution and updates.</li>
+      </ul>
+      <p>We are not responsible for the privacy practices of these third-party services. We encourage you to review their policies directly.</p>
+    </div>
+  </div>
+
+  <!-- 6. DATA STORAGE & SECURITY -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>6. Data Storage and Security</h2>
+    </div>
+    <div class="section-body">
+      <p>All your resume information is stored locally on your Android device using standard Android SharedPreferences storage. This means:</p>
+      <ul>
+        <li>Your data is protected by your device's own security (screen lock, encryption, etc.)</li>
+        <li>If you uninstall the app, all your resume data is permanently deleted</li>
+        <li>If you use the "Clear All Data" option in the app, all data is wiped immediately</li>
+        <li>We cannot access your data remotely — there's no backend server holding it</li>
+      </ul>
+      <p>The generated PDF files are saved to your device storage or shared through your device's share sheet — this is fully under your control.</p>
+    </div>
+  </div>
+
+  <!-- 7. CHILDREN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>7. Children's Privacy</h2>
+    </div>
+    <div class="section-body">
+      <p>Pro Resume Maker is designed for adults and job seekers. We do not knowingly collect any information from children under the age of 13. If you are a parent or guardian and believe your child has used the app, please contact us and we'll do whatever we can to help.</p>
+      <p>The app is rated for Everyone on Google Play and does not contain content inappropriate for any age group.</p>
+    </div>
+  </div>
+
+  <!-- 8. YOUR RIGHTS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>8. Your Rights and Choices</h2>
+    </div>
+    <div class="section-body">
+      <p>Because we don't store your data on our servers, most traditional data rights (access, deletion requests, etc.) are handled entirely by you through the app itself:</p>
+      <ul>
+        <li><strong>Delete your data</strong> — use "Clear All Data" in the Profile section, or simply uninstall the app</li>
+        <li><strong>Edit your data</strong> — all resume content is editable at any time inside the app</li>
+        <li><strong>Ad preferences</strong> — you can opt out of personalized ads through your device's Google settings (Settings → Google → Ads → Opt out of Ads Personalization)</li>
+        <li><strong>Contact us</strong> — if you have any concerns we haven't addressed, email us at support@yourapp.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9. CHANGES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <h2>9. Changes to This Policy</h2>
+    </div>
+    <div class="section-body">
+      <p>If we ever make meaningful changes to this privacy policy — like if we add new features that collect different types of data — we'll update this page and change the "Last updated" date at the top.</p>
+      <p>We won't send you a notification for minor wording changes, but for anything that materially affects your privacy, we'll make it obvious. The current version of this policy is always at this URL.</p>
+      <p>Continuing to use the app after changes are posted means you accept the updated policy.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box">
+    <h3>Questions? Just ask.</h3>
+    <p>We're real people and we take privacy seriously. If something in this policy isn't clear or you have a concern, email us — we respond within 48 hours.</p>
+    <a href="mailto:support@yourapp.com">support@yourapp.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Pro Resume Maker · Shubham Gautam</p>
+  <p style="margin-top:8px;">
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="about.html">About</a>
+  </p>
+</footer>
+
+</body>
+</html>
