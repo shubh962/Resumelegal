@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Service — Pro Resume Maker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --ink:    #1a1a2e;
+    --muted:  #5a5a7a;
+    --accent: #4a00e0;
+    --bg:     #fafaf8;
+    --card:   #ffffff;
+    --border: #e8e8f0;
+    --tag-bg: #f0ecff;
+    --tag-fg: #4a00e0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 60%, #1565C0 100%);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(21,101,192,0.4) 0%, transparent 60%);
+  }
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .app-badge::before { content: '📄'; font-size: 15px; }
+  header h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  header p {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    position: relative;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid #1565C0;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    background: #f9fbff;
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    background: #e8f0fe;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .section-body {
+    padding: 24px 28px;
+    font-size: 15px;
+    color: #3a3a5c;
+    line-height: 1.85;
+  }
+  .section-body p { margin-bottom: 14px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body ul { padding-left: 20px; margin: 12px 0; }
+  .section-body ul li { margin-bottom: 8px; }
+
+  .highlight {
+    background: #e8f0fe;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: #1565C0;
+    font-weight: 500;
+  }
+
+  .contact-box {
+    background: linear-gradient(135deg, #0d2137, #1a3a5c);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-align: center;
+    color: #fff;
+    margin-top: 48px;
+  }
+  .contact-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .contact-box p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 18px; }
+  .contact-box a {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--accent); text-decoration: none; margin: 0 8px; }
+
+  @media (max-width: 600px) {
+    .section-body { padding: 18px; }
+    .section-header { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="app-badge">Pro Resume Maker</div>
+  <h1>Terms of Service</h1>
+  <p>Last updated: June 2026 &nbsp;·&nbsp; Effective immediately</p>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    These terms govern your use of Pro Resume Maker. We've written them to be clear and fair. By downloading or using the app, you agree to these terms. If you don't agree, please don't use the app — though we hope you'll find them reasonable.
+  </div>
+
+  <!-- 1. WHAT THE APP DOES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📄</div>
+      <h2>1. What Pro Resume Maker Does</h2>
+    </div>
+    <div class="section-body">
+      <p>Pro Resume Maker is a free Android application that lets you create professional resumes, choose from multiple templates, and export them as PDF files. The app works entirely on your device — no account, no login, no cloud storage required.</p>
+      <p>We keep the app free by showing ads through Google AdMob. Watching a short ad unlocks PDF download and sharing features. That's the whole business model — transparent and straightforward.</p>
+    </div>
+  </div>
+
+  <!-- 2. ACCEPTABLE USE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">✅</div>
+      <h2>2. Acceptable Use</h2>
+    </div>
+    <div class="section-body">
+      <p>You may use Pro Resume Maker to:</p>
+      <ul>
+        <li>Create resumes for yourself or on behalf of someone who has given you permission</li>
+        <li>Export and share PDF resumes for job applications, professional networking, or personal use</li>
+        <li>Use the app on any personal Android device you own or control</li>
+      </ul>
+      <p>You may not use the app to:</p>
+      <ul>
+        <li>Create resumes containing false, fraudulent, or deliberately misleading information</li>
+        <li>Impersonate another person or create resumes on behalf of someone without their consent</li>
+        <li>Attempt to reverse-engineer, decompile, or tamper with the app</li>
+        <li>Use the app in any way that violates applicable laws or regulations in your country</li>
+        <li>Attempt to bypass the ad-watching requirement through technical means</li>
+      </ul>
+      <div class="highlight">The resumes you create using this app are entirely your own. You own your content.</div>
+    </div>
+  </div>
+
+  <!-- 3. YOUR CONTENT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🖊️</div>
+      <h2>3. Your Content and Responsibility</h2>
+    </div>
+    <div class="section-body">
+      <p>Everything you type into the app — your work history, skills, education, personal details — is your content. You own it completely. We don't claim any rights over it.</p>
+      <p>You are solely responsible for the accuracy of information in your resumes. We provide the tool; you provide the content. Please don't use the app to create fraudulent resumes — not just because it's against these terms, but because it's genuinely harmful.</p>
+      <p>Since all data is stored locally on your device, if you lose your device or uninstall the app, your resume data may not be recoverable. We recommend exporting your resumes to PDF and keeping copies in a safe place.</p>
+    </div>
+  </div>
+
+  <!-- 4. ADS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📢</div>
+      <h2>4. Ads and How They Work</h2>
+    </div>
+    <div class="section-body">
+      <p>Pro Resume Maker is completely free to use. We earn revenue by displaying ads from Google AdMob. Here's exactly how it works:</p>
+      <ul>
+        <li><strong>Banner ads</strong> appear at the bottom of some screens while you use the app</li>
+        <li><strong>Rewarded ads</strong> are optional short videos — you watch one to unlock PDF download or sharing for that session</li>
+        <li><strong>Interstitial ads</strong> may occasionally appear between screens</li>
+      </ul>
+      <p>We don't control which specific ads Google shows you — that's determined by Google's ad platform based on your device settings and location. If you want to reduce ad personalization, you can opt out through your device's Google settings.</p>
+      <p>We never show ads that are misleading, adult-only, or inappropriate. If you encounter an ad that seems wrong, please report it to us.</p>
+    </div>
+  </div>
+
+  <!-- 5. INTELLECTUAL PROPERTY -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">©️</div>
+      <h2>5. Intellectual Property</h2>
+    </div>
+    <div class="section-body">
+      <p>The Pro Resume Maker app — including its design, code, templates, and branding — is owned by Shubham Gautam. All rights reserved.</p>
+      <p>The resume <em>content</em> you create belongs to you. The app's underlying software, UI design, and template designs belong to us.</p>
+      <p>You may not copy, distribute, sell, or create derivative versions of the app or its templates without our written permission.</p>
+    </div>
+  </div>
+
+  <!-- 6. DISCLAIMER -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚠️</div>
+      <h2>6. Disclaimer of Warranties</h2>
+    </div>
+    <div class="section-body">
+      <p>Pro Resume Maker is provided "as is." We genuinely try to make a great, reliable app — but we can't guarantee it will be error-free or work perfectly on every device configuration.</p>
+      <p>Specifically, we don't guarantee:</p>
+      <ul>
+        <li>That using the app will result in you getting a job (we wish we could!)</li>
+        <li>That ATS systems used by specific employers will perfectly parse our templates</li>
+        <li>That the app will be available uninterrupted at all times</li>
+        <li>That your data won't be lost if your device is damaged, lost, or reset</li>
+      </ul>
+      <p>We do our best to make templates ATS-friendly based on current best practices, but hiring outcomes depend on many factors outside our control.</p>
+    </div>
+  </div>
+
+  <!-- 7. LIMITATION OF LIABILITY -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🛡️</div>
+      <h2>7. Limitation of Liability</h2>
+    </div>
+    <div class="section-body">
+      <p>To the maximum extent permitted by law, Pro Resume Maker and its developer (Shubham Gautam) shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+      <p>Since the app is free, our total liability to you for any claim is limited to zero rupees — which reflects the fact that you haven't paid us anything. This is a standard clause for free apps and is not meant to be dismissive of your concerns.</p>
+      <p>Nothing in these terms limits liability for things we can't legally disclaim, like fraud or personal injury caused by our negligence.</p>
+    </div>
+  </div>
+
+  <!-- 8. TERMINATION -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🚪</div>
+      <h2>8. Termination</h2>
+    </div>
+    <div class="section-body">
+      <p>You can stop using the app and uninstall it at any time — no notice required. All your data will be deleted from your device upon uninstallation.</p>
+      <p>We reserve the right to discontinue the app or remove it from the Play Store at any time, though we'd obviously prefer not to. If we do shut down, we'll try to give reasonable notice.</p>
+    </div>
+  </div>
+
+  <!-- 9. GOVERNING LAW -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>9. Governing Law</h2>
+    </div>
+    <div class="section-body">
+      <p>These terms are governed by the laws of India. Any disputes will be subject to the jurisdiction of courts in India.</p>
+      <p>If any part of these terms is found to be unenforceable, the rest of the terms remain fully in effect.</p>
+    </div>
+  </div>
+
+  <!-- 10. CHANGES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <h2>10. Changes to These Terms</h2>
+    </div>
+    <div class="section-body">
+      <p>We may update these terms from time to time. When we do, we'll update the date at the top of this page. For significant changes, we'll try to notify you through the app.</p>
+      <p>Continuing to use the app after updated terms are posted means you accept the changes. If you don't agree with updated terms, your option is to stop using the app.</p>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <h3>Have a question about these terms?</h3>
+    <p>We're approachable. If anything here is confusing or you have a concern, just email us. We'll get back to you within 48 hours.</p>
+    <a href="mailto:support@yourapp.com">support@yourapp.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Pro Resume Maker · Shubham Gautam</p>
+  <p style="margin-top:8px;">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="about.html">About</a>
+  </p>
+</footer>
+
+</body>
+</html>
