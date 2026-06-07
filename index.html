@@ -3,20 +3,594 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pro Resume Maker — Legal</title>
+<title>Pro Resume Maker — Legal & Info</title>
 <style>
-  body { font-family: sans-serif; max-width: 500px; margin: 80px auto; padding: 24px; text-align: center; }
-  h1 { font-size: 22px; margin-bottom: 8px; color: #1a1a2e; }
-  p { color: #666; margin-bottom: 32px; font-size: 14px; }
-  a { display: block; background: #4a00e0; color: #fff; text-decoration: none;
-      padding: 12px 24px; border-radius: 10px; margin-bottom: 12px; font-size: 15px; }
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --ink:    #1a1a2e;
+    --muted:  #5a5a7a;
+    --accent: #4a00e0;
+    --accent2:#8e2de2;
+    --bg:     #f7f7fb;
+    --card:   #ffffff;
+    --border: #e8e8f0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 45%, #4a00e0 80%, #8e2de2 100%);
+    padding: 80px 24px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    top: -150px; right: -100px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(142,45,226,0.2) 0%, transparent 70%);
+    bottom: -80px; left: -60px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+    position: relative;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .hero-icon {
+    width: 88px; height: 88px;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    margin: 0 auto 24px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(30px, 6vw, 52px);
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .hero-subtitle {
+    color: rgba(255,255,255,0.65);
+    font-size: 16px;
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+  .hero-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 22px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-val {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .stat-lbl {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sec-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── ABOUT CARD ── */
+  .about-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .about-card h2 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .about-card p {
+    font-size: 15px;
+    color: #3a3a5c;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .about-card p:last-child { margin-bottom: 0; }
+
+  /* ── FEATURES ── */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .feat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(74,0,224,0.08);
+  }
+  .feat-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .feat-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 6px; }
+  .feat-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── LEGAL CARDS ── */
+  .legal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .legal-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 26px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .legal-card::after {
+    content: '→';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--border);
+    transition: color 0.2s, right 0.2s;
+  }
+  .legal-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 24px rgba(74,0,224,0.1);
+    transform: translateY(-2px);
+  }
+  .legal-card:hover::after { color: var(--accent); right: 20px; }
+  .legal-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .legal-icon.purple { background: #f0ecff; }
+  .legal-icon.blue   { background: #e8f0fe; }
+  .legal-icon.green  { background: #e8f5e9; }
+  .legal-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .legal-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding-right: 20px;
+  }
+  .legal-tag {
+    display: inline-block;
+    background: #f0ecff;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-top: 10px;
+  }
+
+  /* ── ATS ── */
+  .ats-card {
+    background: linear-gradient(135deg, #f0ecff 0%, #e8f0fe 100%);
+    border: 1px solid #d8d0f8;
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .ats-card h2 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  .ats-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+  .ats-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #3a3a5c;
+    align-items: flex-start;
+  }
+  .ats-list li::before {
+    content: '✓';
+    color: #00695C;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── DEV ── */
+  .dev-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 48px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .dev-av {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .dev-info h3 { font-family: 'Lora', serif; font-size: 20px; margin-bottom: 4px; }
+  .dev-role { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+  .dev-info p { font-size: 14px; color: #3a3a5c; line-height: 1.8; margin-bottom: 10px; }
+  .dev-info p:last-child { margin-bottom: 0; }
+
+  /* ── CONTACT ── */
+  .contact-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #4a00e0 100%);
+    border-radius: 20px;
+    padding: 44px 36px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    top: -100px; right: -50px;
+    border-radius: 50%;
+  }
+  .contact-card h2 {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .contact-card p {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    max-width: 420px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 12px 26px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-white { background: #fff; color: var(--accent); }
+  .btn-white:hover { background: #f0ecff; }
+  .btn-ghost { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--card);
+  }
+  footer .footer-links { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+  footer a { color: var(--accent); text-decoration: none; padding: 0 8px; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+    .stat:nth-child(4) { border-top: 1px solid var(--border); }
+    .dev-card { flex-direction: column; }
+    .about-card, .dev-card, .contact-card { padding: 24px 20px; }
+    .ats-card { padding: 24px 20px; }
+  }
 </style>
 </head>
 <body>
-  <h1>📄 Pro Resume Maker</h1>
-  <p>Legal pages for the Pro Resume Maker Android app</p>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms.html">Terms of Service</a>
-  <a href="about.html">About Us</a>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ Official App Page</div>
+  <div class="hero-icon">📄</div>
+  <h1>Pro Resume Maker</h1>
+  <p class="hero-subtitle">Build professional, ATS-optimized resumes directly from your Android phone — free, fast, and no account required.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">📱 Android App</span>
+    <span class="hero-tag">🤖 ATS-Optimized</span>
+    <span class="hero-tag">🔒 100% On-Device</span>
+    <span class="hero-tag">⭐ Free Forever</span>
+    <span class="hero-tag">🇮🇳 Made in India</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <span class="stat-val">9</span>
+    <span class="stat-lbl">Templates</span>
+  </div>
+  <div class="stat">
+    <span class="stat-val">100%</span>
+    <span class="stat-lbl">Free</span>
+  </div>
+  <div class="stat">
+    <span class="stat-val">ATS</span>
+    <span class="stat-lbl">Ready</span>
+  </div>
+  <div class="stat">
+    <span class="stat-val">0</span>
+    <span class="stat-lbl">Data Collected</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ABOUT -->
+  <p class="sec-title">About the App</p>
+  <div class="about-card">
+    <h2>What is Pro Resume Maker?</h2>
+    <p>Pro Resume Maker is a free Android application built specifically for job seekers in India and around the world. It lets you create clean, professional resumes from scratch — right on your phone — and export them instantly as PDF files ready to send to recruiters.</p>
+    <p>Most resume builders either cost money, force you to create an account, or produce resumes that look great on screen but fail when processed by Applicant Tracking Systems (ATS) — the automated software used by most companies to filter job applications before a human ever sees them. We built this app to solve all three problems at once.</p>
+    <p>Everything happens on your device. No internet needed for editing, no cloud storage, no login. Your resume data is completely private and stays with you. We show a few ads to keep the app free — that's the whole business model, nothing hidden.</p>
+  </div>
+
+  <!-- FEATURES -->
+  <p class="sec-title">Key Features</p>
+  <div class="features">
+    <div class="feat">
+      <span class="feat-icon">🎨</span>
+      <div class="feat-title">9 Professional Templates</div>
+      <div class="feat-desc">Classic, Modern Blue, Executive, Minimal, Emerald, Slate Column, Crimson Edge, Navy Timeline and more.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🤖</span>
+      <div class="feat-title">ATS-Optimized Output</div>
+      <div class="feat-desc">Plain text, standard headings, no tables or charts — designed to pass ATS filters at top companies.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">📱</span>
+      <div class="feat-title">Fully Offline</div>
+      <div class="feat-desc">No internet needed to edit your resume. Works anywhere, anytime, even without a connection.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">📤</span>
+      <div class="feat-title">Instant PDF Export</div>
+      <div class="feat-desc">Export to PDF and share directly to Gmail, WhatsApp, LinkedIn, or anywhere in seconds.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🔗</span>
+      <div class="feat-title">LinkedIn & Portfolio</div>
+      <div class="feat-desc">Add your LinkedIn URL and personal website — shown in the contact section of every template.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🔒</span>
+      <div class="feat-title">Zero Data Collection</div>
+      <div class="feat-desc">Your resume content never leaves your device. We don't have servers storing your personal information.</div>
+    </div>
+  </div>
+
+  <!-- LEGAL LINKS -->
+  <p class="sec-title">Legal & Policies</p>
+  <div class="legal-grid">
+    <a class="legal-card" href="privacy-policy.html">
+      <div class="legal-icon purple">🔒</div>
+      <div class="legal-title">Privacy Policy</div>
+      <div class="legal-desc">What data we collect, how we use it, and what we don't do with your information. Plain language, no jargon.</div>
+      <span class="legal-tag">Required by Play Store</span>
+    </a>
+    <a class="legal-card" href="terms.html">
+      <div class="legal-icon blue">📋</div>
+      <div class="legal-title">Terms of Service</div>
+      <div class="legal-desc">The rules for using the app, your rights as a user, and what we're responsible for. Fair and transparent.</div>
+      <span class="legal-tag">Governs App Usage</span>
+    </a>
+    <a class="legal-card" href="about.html">
+      <div class="legal-icon green">👤</div>
+      <div class="legal-title">About Us</div>
+      <div class="legal-desc">Who built this app, why we built it, and what we're committed to as developers. Our full story.</div>
+      <span class="legal-tag">Our Story</span>
+    </a>
+  </div>
+
+  <!-- ATS -->
+  <p class="sec-title">ATS Compatibility</p>
+  <div class="ats-card">
+    <h2>Why Our Templates Pass ATS Filters</h2>
+    <ul class="ats-list">
+      <li>Single-font PDF output using Helvetica — universally readable by ATS</li>
+      <li>Skills as plain bullet points, never tables or pill badges</li>
+      <li>Standard section headings: EXPERIENCE, EDUCATION, SKILLS, PROJECTS</li>
+      <li>Contact info in the main page flow, not PDF headers/footers</li>
+      <li>No images, charts, or progress bars in content areas</li>
+      <li>Left-aligned body text for maximum parsing accuracy</li>
+      <li>LinkedIn and website links included in the contact row</li>
+      <li>Clean date formats that ATS systems recognize correctly</li>
+    </ul>
+  </div>
+
+  <!-- DEVELOPER -->
+  <p class="sec-title">The Developer</p>
+  <div class="dev-card">
+    <div class="dev-av">S</div>
+    <div class="dev-info">
+      <h3>Shubham Gautam</h3>
+      <div class="dev-role">Independent Developer · India 🇮🇳</div>
+      <p>B.Tech graduate in Information Technology with a passion for building tools that solve real, everyday problems. Pro Resume Maker started as a personal side project after seeing how frustrating and expensive most resume apps were for students and fresh graduates in India.</p>
+      <p>The goal from day one was simple: build something genuinely useful, keep it free, don't collect unnecessary data, and don't overcomplicate the user experience. Every feature in the app was added because real users asked for it.</p>
+      <p>Open to feedback, bug reports, and feature suggestions. The app gets better because of its users.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <h2>Get in Touch</h2>
+    <p>Found a bug? Have a feature request? Want a new template added? We read every message and respond within 48 hours. Your feedback directly shapes how the app improves.</p>
+    <div class="btn-row">
+      <a href="mailto:Gautamshubham962@gmail.com" class="btn btn-white">✉ Email Us</a>
+      <a href="privacy-policy.html" class="btn btn-ghost">🔒 Privacy Policy</a>
+      <a href="terms.html" class="btn btn-ghost">📋 Terms of Service</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Pro Resume Maker · Developed by Shubham Gautam · India</p>
+  <p style="margin-top:6px; color: #999; font-size:11px;">This page is the official legal and information hub for the Pro Resume Maker Android application.</p>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <span style="color:var(--border)">·</span>
+    <a href="terms.html">Terms of Service</a>
+    <span style="color:var(--border)">·</span>
+    <a href="about.html">About Us</a>
+    <span style="color:var(--border)">·</span>
+    <a href="mailto:Gautamshubham962@gmail.com">Contact</a>
+  </div>
+</footer>
+
 </body>
 </html>
