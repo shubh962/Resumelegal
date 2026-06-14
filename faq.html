@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FAQ — Pro Resume Maker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+  :root{--ink:#1a1a2e;--muted:#5a5a7a;--accent:#4a00e0;--bg:#fafaf8;--card:#ffffff;--border:#e8e8f0;--tag-bg:#f0ecff;--tag-fg:#4a00e0;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:16px;}
+
+  header{background:linear-gradient(135deg,#1a1a2e 0%,#1565C0 60%,#1976D2 100%);padding:60px 24px 50px;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(25,118,210,0.4) 0%,transparent 60%);}
+  .app-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:6px 16px;font-size:13px;color:rgba(255,255,255,0.85);margin-bottom:20px;position:relative;}
+  header h1{font-family:'Lora',serif;font-size:clamp(28px,5vw,44px);font-weight:600;color:#fff;position:relative;margin-bottom:12px;}
+  header p{color:rgba(255,255,255,0.65);font-size:14px;position:relative;}
+
+  .container{max-width:780px;margin:0 auto;padding:48px 24px 80px;}
+
+  .intro-box{background:var(--card);border:1px solid var(--border);border-left:4px solid #1565C0;border-radius:12px;padding:24px 28px;margin-bottom:40px;font-size:15px;color:var(--muted);line-height:1.9;}
+
+  .section-title{font-family:'Lora',serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#1565C0;margin:40px 0 20px;display:flex;align-items:center;gap:10px;}
+  .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* Accordion */
+  .faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;}
+  .faq-q{width:100%;background:none;border:none;padding:20px 24px;text-align:left;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background 0.2s;}
+  .faq-q:hover{background:#fdfcff;}
+  .faq-q .arrow{font-size:18px;color:var(--accent);transition:transform 0.3s;flex-shrink:0;}
+  .faq-q.open .arrow{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease;}
+  .faq-a.open{max-height:600px;}
+  .faq-a-inner{padding:0 24px 20px;font-size:14px;color:#3a3a5c;line-height:1.85;border-top:1px solid var(--border);}
+  .faq-a-inner p{margin-top:14px;margin-bottom:0;}
+  .faq-a-inner ul{padding-left:18px;margin-top:10px;}
+  .faq-a-inner ul li{margin-bottom:6px;}
+  .faq-a-inner a{color:var(--accent);text-decoration:none;}
+  .faq-a-inner strong{color:var(--ink);}
+
+  .contact-box{background:linear-gradient(135deg,#1a1a2e,#1565C0);border-radius:16px;padding:32px 28px;text-align:center;color:#fff;margin-top:48px;}
+  .contact-box h3{font-family:'Lora',serif;font-size:20px;margin-bottom:10px;}
+  .contact-box p{color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:18px;}
+  .contact-box a{display:inline-block;background:#1565C0;color:#fff;text-decoration:none;padding:11px 28px;border-radius:100px;font-size:14px;font-weight:500;}
+
+  footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);}
+  footer a{color:var(--accent);text-decoration:none;margin:0 8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="app-badge">📄 Pro Resume Maker</div>
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you might want to know about the app</p>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    Can't find what you're looking for? Email us at <strong>Gautamshubham962@gmail.com</strong> — we respond within 48 hours and your question might end up here to help others.
+  </div>
+
+  <p class="section-title">General Questions</p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Is Pro Resume Maker completely free? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Yes, 100% free. You can create unlimited resumes, use all templates, and fill in every section without paying anything. We keep the app free by showing ads from Google AdMob. A short ad plays before you download or share your PDF — that's it. No subscription, no premium tier, no hidden charges.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Do I need to create an account or sign in? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>No. There is no account, no login, no email registration — nothing. You open the app and start building your resume immediately. Your data is saved directly on your device, not on our servers.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Does the app work offline? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Yes. You can create and edit your resume completely offline. Internet is only needed to load ads (when downloading/sharing) and to open links like LinkedIn or our legal pages. The core resume-building and PDF export functionality works with no internet connection.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How many resumes can I create? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>There's no hard limit. You can create as many resumes as your device storage allows. We recommend having separate resumes tailored to different job types — for example, one for IT support roles and one for software development roles.</p></div></div>
+  </div>
+
+  <p class="section-title">Resume Building</p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I show I'm currently working at a company? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>When adding or editing a work experience entry, you'll see a <strong>"Currently working here"</strong> checkbox below the End Date field. Tick it and the end date will automatically be set to <strong>Present</strong> on your resume. The date will display as "Jun 2024 – Present" or similar across all templates.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can I rearrange the sections on my resume? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Yes. Go to the <strong>Manage Sections</strong> screen from the editor dashboard. You can drag and drop sections to reorder them, and toggle sections on or off. Put your strongest section at the top — for freshers, Education often goes before Experience.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I add a profile photo to my resume? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>In the Personal Details section, tap the photo area at the top. This will open your device gallery so you can pick a photo. Note: not all templates display a profile photo — some ATS-optimized templates (like Clean ATS Pro and Classic Pro) intentionally omit the photo to improve ATS compatibility.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can I duplicate a resume and edit the copy? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Yes. On the home screen, long-press any resume card to see options including <strong>Duplicate</strong>. This creates an exact copy you can edit independently — useful for tailoring the same base resume to different job applications.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Why does my resume look different in the preview vs the PDF? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>The preview in the app is a close approximation rendered using Flutter widgets. The actual PDF is generated using the Helvetica font and PDF library, which renders slightly differently. In most cases the difference is minor — font weight, line spacing, and exact layout may vary slightly. The PDF is always the final version.</p></div></div>
+  </div>
+
+  <p class="section-title">Templates & PDF</p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Which template should I use for IT/corporate jobs? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>For IT, corporate, and MNC applications, we recommend:</p>
+      <ul>
+        <li><strong>Clean ATS Pro</strong> — best ATS compatibility, plain and professional</li>
+        <li><strong>Classic Pro</strong> — traditional single-column, universally accepted</li>
+        <li><strong>Executive</strong> — black & gold, good for senior roles</li>
+      </ul>
+      <p>Avoid heavily designed templates (like Sidebar Dark or Crimson Edge) for ATS-heavy application portals — the two-column layout can confuse some parsers.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Are the resume templates ATS-friendly? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Yes — all templates are designed with ATS compatibility in mind. Specifically:</p>
+      <ul>
+        <li>Single standard font (Helvetica) — universally parseable</li>
+        <li>No tables, charts, or progress bars in content areas</li>
+        <li>Standard section headings: EXPERIENCE, EDUCATION, SKILLS</li>
+        <li>Contact info in the main page body, not in PDF headers/footers</li>
+        <li>Left-aligned text throughout</li>
+      </ul>
+      <p>Single-column templates (Classic Pro, Clean ATS Pro) have the highest ATS compatibility. Two-column templates work well for human readers but may be parsed less accurately by some older ATS systems.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I download my resume as a PDF? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Open your resume in the Preview screen. At the bottom action bar, tap the <strong>download icon</strong> (arrow pointing down). A short ad will play, then your PDF will be saved to your device's Downloads folder or Documents. You can also tap the <strong>share icon</strong> to send it directly via WhatsApp, Gmail, or any other app.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can I print my resume directly from the app? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Yes. In the Preview screen, tap the <strong>print icon</strong> in the action bar. This opens Android's built-in print dialog, which connects to your Wi-Fi printer or Google Cloud Print. You can also save as PDF from this dialog.</p></div></div>
+  </div>
+
+  <p class="section-title">Data & Privacy</p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Where is my resume data stored? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>All your resume data is stored <strong>locally on your device</strong> using Android's SharedPreferences storage. None of your personal information — name, phone, experience, education — is uploaded to any server. We don't have a backend database with your data. If you uninstall the app, the data is deleted.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What happens if I change phones or reinstall the app? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Currently, resume data does not transfer automatically when you change devices or reinstall the app. <strong>We strongly recommend downloading your resumes as PDFs and saving them to Google Drive or emailing them to yourself</strong> before switching devices. This is a known limitation we're working to address in future versions.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I delete all my data? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Go to the <strong>Profile</strong> tab → scroll down to the Data section → tap <strong>Clear All Data</strong>. This permanently deletes all resumes and preferences from your device. Alternatively, uninstalling the app removes all data as well. This action cannot be undone, so export your PDFs first.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Does the app collect my personal information? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>No. We don't collect the resume content you enter. The only data collected is standard ad-related data by <strong>Google AdMob</strong> (device type, general location for ad targeting) — which is the same as any free app with ads. See our full <a href="privacy-policy.html">Privacy Policy</a> for details.</p></div></div>
+  </div>
+
+  <p class="section-title">Notifications & Settings</p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Why am I getting daily notifications? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>If you have Reminders enabled in the Profile screen, the app sends one motivational notification per day at a random time between 9 AM and 8 PM. These are gentle prompts to keep your resume updated. You can disable them anytime by going to <strong>Profile → Reminders → toggle off</strong>.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I turn off notifications? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>Open the app → tap <strong>Profile</strong> tab → find the <strong>Reminders</strong> toggle → turn it off. You can also disable notifications system-wide from your phone's Settings → Apps → Pro Resume Maker → Notifications.</p></div></div>
+  </div>
+
+  <p class="section-title">Troubleshooting</p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">The app is crashing or freezing. What should I do? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Try these steps in order:</p>
+      <ul>
+        <li>Force close the app and reopen it</li>
+        <li>Restart your phone</li>
+        <li>Check if there's an app update available on the Play Store</li>
+        <li>Clear the app cache: Settings → Apps → Pro Resume Maker → Clear Cache</li>
+        <li>If the issue persists, email us with your device model and Android version</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">My PDF download isn't working. What's wrong? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>A few things to check:</p>
+      <ul>
+        <li>Make sure the app has <strong>storage permission</strong> enabled (Settings → Apps → Pro Resume Maker → Permissions → Storage)</li>
+        <li>Ensure you have enough free storage space on your device</li>
+        <li>Try sharing instead of downloading — this often works even when direct download doesn't</li>
+        <li>If an ad didn't load, the download may not trigger — check your internet connection</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Special characters or dates look broken in my PDF. How do I fix it? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>This is a known issue with certain Unicode characters (like em dashes, emojis, or special symbols) that don't render in the PDF's standard font. The app automatically converts these to plain alternatives. Make sure you're using the latest version of the app (v1.0.2+), which includes improved character handling. If you still see issues, try replacing any unusual characters with plain text equivalents.</p></div></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">I don't see the "Currently Working Here" checkbox. Why? <span class="arrow">+</span></button>
+    <div class="faq-a"><div class="faq-a-inner"><p>This feature was added in version 1.0.2. Please update the app from the Google Play Store to get this and all other recent fixes. Go to Play Store → search "Pro Resume Maker" → tap Update.</p></div></div>
+  </div>
+
+  <div class="contact-box">
+    <h3>Question not answered here?</h3>
+    <p>We update this FAQ based on real questions from users. If yours isn't here, just email us — we'll answer and might add it here to help others.</p>
+    <a href="mailto:Gautamshubham962@gmail.com">Gautamshubham962@gmail.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Pro Resume Maker · Shubham Gautam</p>
+  <p style="margin-top:8px;">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="how-to-use.html">How to Use</a>
+  </p>
+</footer>
+
+<script>
+function toggle(btn){
+  btn.classList.toggle('open');
+  const ans = btn.nextElementSibling;
+  ans.classList.toggle('open');
+}
+</script>
+</body>
+</html>
